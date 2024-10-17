@@ -6,20 +6,20 @@ class WarpDevBackup < Formula
 
   desc ""
   homepage "https://github.com/db-it/warp-dev-backup"
-  url "https://github.com/db-it/warp-dev-backup/releases/download/v0.1.0/warp_dev_backup-0.1.0.tar.gz"
-  sha256 "82ab540b7cc0befdcfd41030dbb9b18e7958779b841073330bf56b3f6ebe45d3"
+  url "https://github.com/db-it/warp-dev-backup/releases/download/v0.2.0/warp_dev_backup-0.2.0.tar.gz"
+  sha256 "a35e6463e762e1af0850b3f5d84ac681f62f178eaac559dabfbfe098433f6efb"
   license "GPL-3.0"
 
   depends_on "python"
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/76/21/7a0b24fae849562397efd79da58e62437243ae0fd0f6c09c6bc26225b75c/humanize-4.9.0.tar.gz"
-    sha256 "582a265c931c683a7e9b8ed9559089dea7edcf6cc95be39a3cbc2c5d5ac2bcfa"
+    url "https://files.pythonhosted.org/packages/6a/40/64a912b9330786df25e58127194d4a5a7441f818b400b155e748a270f924/humanize-4.11.0.tar.gz"
+    sha256 "e66f36020a2d5a974c504bd2555cf770621dbdbb6d82f94a6857c0b1ea2608be"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   def install
@@ -27,7 +27,7 @@ class WarpDevBackup < Formula
   end
 
   service do
-    run [opt_bin/"wdb", "scan"]
+    run [opt_bin/"wdb", "scan", "--service"]
     run_type :interval
     require_root true
     interval 60 # 24 hours = 60 * 60 * 24

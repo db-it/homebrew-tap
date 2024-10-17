@@ -6,8 +6,8 @@ class WarpDevBackup < Formula
 
   desc ""
   homepage "https://github.com/db-it/warp-dev-backup"
-  url "https://github.com/db-it/warp-dev-backup/releases/download/v0.2.0/warp_dev_backup-0.2.0.tar.gz"
-  sha256 "a35e6463e762e1af0850b3f5d84ac681f62f178eaac559dabfbfe098433f6efb"
+  url "https://github.com/db-it/warp-dev-backup/releases/download/v0.2.1/warp_dev_backup-0.2.1.tar.gz"
+  sha256 "05baaf0be3ae4b315b6c5b005c79c7860c8f4d9d47ba911f64fdfdefac2e5b7d"
   license "GPL-3.0"
 
   depends_on "python"
@@ -29,7 +29,7 @@ class WarpDevBackup < Formula
   service do
     run [opt_bin/"wdb", "scan", "--service"]
     run_type :interval
-    require_root true
+    require_root false
     interval 60 # 24 hours = 60 * 60 * 24
     log_path "~/Library/Logs/warp-dev-backup/wdb.service.stdout.log"
     error_log_path "~/Library/Logs/warp-dev-backup/wdb.service.stderr.log"

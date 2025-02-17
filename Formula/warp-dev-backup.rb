@@ -30,7 +30,7 @@ class WarpDevBackup < Formula
     run [opt_bin/"wdb", "scan", "--service"]
     run_type :interval
     require_root false
-    interval 60 # 24 hours = 60 * 60 * 24
+    interval 3600 # 1 hour = 60 * 60
     log_path "~/Library/Logs/warp-dev-backup/wdb.service.stdout.log"
     error_log_path "~/Library/Logs/warp-dev-backup/wdb.service.stderr.log"
   end
